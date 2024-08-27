@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="game-container">
+        <div class="card d-flex flex-row justify-content-between">
+          <div class="card-body">
+            <h2>Rock</h2>
+            <h2>Paper</h2>
+            <h2>Scissors</h2>
+          </div>
+          <div class="d-flex flex-row">
+            <div class="score-card">
+              <h1>Computer Score</h1>
+              <h2 id="computer-score">0</h2>
+            </div>
+            <div class="score-card">
+              <h1>Your <br /> Score</h1>
+              <h2 id="user-score">0</h2>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center align-items-center">
+          <div class="circle-container">
+            <div class="circle1">
+              <img src="rock.png" class="rock-image" alt="rock-image" />
+            </div>
+            <div class="circle2">
+              <img src="scissor.png" class="scissor-image" alt="scissor-image" />
+            </div>
+            <div class="circle3">
+              <img src="paper.png" class="paper-image" alt="paper-image" />
+            </div>
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+          </div>
+        </div>
+        <div id="rules-button" class="bottom-button">Rules</div>
+        <div id="result-container">
+          <div class="result-content d-flex flex-row justify-content-center align-items-center text-center">
+            <div class="gradient-container1">
+              <p class="text">You picked</p>  
+              <div id="user-result-circle"  id="user-wrapper" class="result-circle"></div>         
+            </div>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+              <div id="result-message"></div> 
+              <div id="against-pc-message">Against PC</div>
+              <button id="play-again" class="">Play Again</button>
+            </div>
+            <div class="gradient-container2">
+              <p class="text">PC picked</p>
+              <div id="computer-result-circle" id="computer-wrapper" class="result-circle"></div>
+            </div>
+          </div>
+        </div>   
+        <div id="rules-button" class="bottom-button" onclick="rulesButtons()">Rules</div>
+        <div id="next-button" class="bottom-button" onclick="nextButtons()">Next</div>     
+      </div>
+      <div id="next-page">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <img src="next1.png" alt="next-1" class="image-1" />
+          <img src="next2.png" alt="next-2" class="image-2" />
+          <h1 class="hurray">HURRAY!!</h1>
+          <p class="won-text">YOU WON THE GAME</p>
+          <button class="next-play"> PLAY AGAIN </button>
+        </div>
+        <div id="rules-button" class="bottom-button" onclick="rulesButtons()">Rules</div>
+      </div>
+      <div id="rules-card">
+        <div id="close-button">X</div>
+        <div class="circle-overlay"></div>
+        <h2>Game Rules</h2>
+        <div id="rules-content">
+          <div class="rules-point">
+            <span class="points"></span> Rock beats scissors, scissors beat paper, and paper beats rock.
+          </div>
+          <div class="rules-point">
+            <span class="points"></span> Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”
+          </div>
+          <div class="rules-point">
+            <span class="points"></span> Use rock, paper, scissors to settle minor decisions or simply play to pass the time
+          </div>
+          <div class="rules-point">
+            <span class="points"></span> If both players lay down the same hand, each player lays down another hand
+          </div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

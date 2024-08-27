@@ -1,0 +1,606 @@
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+}
+.card {
+    width: 800px;
+    height: 158px;
+    top: 62px;
+    left: 240px;
+    gap: 0px;
+    border-radius: 13px;
+    border: 2px 0px 0px 0px;
+    opacity: 0px;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+.card-body {
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 46.88px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.score-card {
+    width: 139px;
+    height: 128px;
+    top: 77px;
+    left: 713px;
+    gap: 0px;
+    border-radius: 9px;
+    opacity: 0px;
+    background: #FFFFFF;
+    margin: 15px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+}
+
+.score-card h1 {
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #656565;
+}
+
+.score-card h2 {
+    font-family: Roboto;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 79.69px;
+    text-align: center;
+    color: #252525;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.circle1, .circle2, .circle3 {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+.circle1{
+    width: 110px;
+    height: 110px;
+    top: 329px;
+    left: 477px;
+    border: 16px solid #0074B6;
+    padding-top: 5px;
+}
+
+.circle2 {
+    width: 110px;
+    height: 110px;
+    top: 329px;
+    left: 713px;
+    border: 16px solid #BD00FF;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.circle3 {
+    width: 110px;
+    height: 110px;
+    top: 533px;
+    left: 595px;
+    border: 16px solid #FFA943;
+}
+
+.rock-image {
+    width: 80px;
+    height: 58.51px;
+    top: 351px;
+    left: 492px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.scissor-image {
+    width: 37px;
+    height: 53.5px;
+    top: 352px;
+    left: 751.92px;
+    gap: 0px;
+    opacity: 0px;
+    rotate: -5.27 deg;
+}
+
+.paper-image {
+    width: 72px;
+    height: 72px;
+    top: 552px;
+    left: 614px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.line {
+    position: absolute;
+    background-color: #000000A3;
+    opacity: 0.8;
+    height: 15px; /* Line thickness */
+    z-index: 0;
+}
+
+.line1 {
+    width: 133px; /* Distance between circle1 and circle2 */
+    top: 393px; /* Vertical position of the center of circle1 */
+    left: 582px; /* Horizontal position of the center of circle1 */
+    transform: rotate(0deg);
+    transform-origin: left center;
+}
+
+.line2 {
+    width: 133px; /* Distance between circle1 and circle3 */
+    top: 550px; /* Vertical position of the center of circle1 */
+    left: 690px; /* Horizontal position of the center of circle1 */
+    transform: rotate(-60deg); /* Adjust this value to match the angle between circle1 and circle3 */
+    transform-origin: left center;
+}
+
+.line3 {
+    width: 133px;
+    top: 433px;
+    left: 540px;
+    transform: rotate(60.58deg);
+    transform-origin: left center;
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+}
+
+#result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .result-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    border: 2px solid black;
+    overflow: hidden;
+  }
+  
+  .result-circle img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Specific classes for result circles */
+  .result-rock, .result-paper, .result-scissors {
+    background-color: lightgrey; /* or any color to show as background */
+  }
+  .result-rock {
+    background-color: #FFFFFF;
+    border: 16px solid #0074B6;
+
+  }
+
+  .result-scissors {
+    background-color: #FFFFFF;
+    border: 16px solid #BD00FF;;
+  }
+  
+  .result-paper {
+    background-color: #FFFFFF;
+    border: 16px solid #FFA943;
+  }
+
+  
+  #result-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 20px; /* Space between message and circles */
+  }
+
+  #result-container {
+    display: none; /* Initially hidden */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+  }
+
+  #play-again {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #result-container {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .result-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .result-circle {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+    background-size: cover;
+  }
+  
+  #user-result-circle, #computer-result-circle {
+    width: 140px;
+    height: 140px;
+    margin: 10px;
+    border-radius: 50%;
+    background-size: cover;
+    padding: 10px;
+  }
+  
+  #result-message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    font-family: Roboto;
+    font-size: 39px;
+    font-weight: 800;
+    line-height: 45.7px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  
+  #against-pc-message {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-family: Roboto;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 29.3px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  
+  #play-again {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    /*Adjustmargintofityourdesign*/width: 174px;
+    height: 44px;
+    top: 547px;
+    left: 570px;
+    gap: 0px;
+    border-radius: 9px;
+    opacity: 0px;
+    background: #FFFFFF;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+}
+
+/* Adjust the positioning of the rules button */
+#rules-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Adjust if needed */
+    width: 119px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    background: transparent;
+    opacity: 1;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 24.61px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 5px;
+    color: #FFFFFF;
+    display: block; /* Show by default if needed */
+}
+
+/* Adjust the positioning of the next button */
+#next-button {
+    position: fixed;
+    bottom: 20px;
+    right: 150px; /* Position to the left of the rules button */
+    width: 119px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    background: transparent;
+    opacity: 1;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 24.61px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding: 5px;
+    color: #FFFFFF;
+    display: none; /* Initially hidden */
+}
+
+
+  #rules-button:hover {
+    background-color: #0074B6; /* Background color on hover */
+    color: #FFFFFF; /* Text color on hover */
+  }
+
+  #rules-card {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed position */
+    transform: translate(-50%, -50%); /* Center the card */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the card */
+    z-index: 1000; /* Ensure card is on top */
+    position: relative; /* For the close button positioning */
+    width: 278px;
+    height: 325px;
+    top: -250px;
+    left: 1200px;
+    gap: 0px;
+    border-radius: 13px 0px 0px 0px;
+    border: 7px 0px 0px 0px;
+    opacity: 0px;
+    background: #004429;
+    border: 7px solid #FFFFFF;
+}
+
+/* Close button styling */
+#close-button {
+    position: absolute; /* Absolute position inside the card */
+    top: -25px; /* Move button outside the card */
+    right: -25px; /* Move button outside the card */
+    width: 50px; /* Button size */
+    height: 50px; /* Button size */
+    border-radius: 50%; /* Circular button */
+    background: #FF0000; /* Button background color */
+    color: #FFFFFF; /* Button text color */
+    display: flex; /* Center text inside button */
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 24px; /* Font size for the X */
+    font-weight: bold; /* Font weight for the X */
+    border: none; /* Remove border */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for the button */
+}
+
+#rules-card h2 {
+    font-family: Roboto;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 33.98px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+
+/* Game rules styling */
+#rules-content {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15.23px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.rules-point {
+    display: flex; /* Flex layout for points */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Space between points */
+}
+
+.rules-point span {
+    display: inline-block; /* Inline block for color box */
+    width: 8px;
+    height: 8px;
+    margin-right: 8px; 
+}
+
+.points {
+    background: #FFD600;
+}
+
+/* General bottom buttons container */
+#bottom-buttons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px; /* Align container to the right */
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Common styles for bottom buttons */
+.bottom-button {
+    width: 119px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    background: #D9D9D9;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 24.61px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    cursor: pointer;
+    display: none; /* Default state is hidden */
+}
+
+/* Styles specifically for Rules button */
+#rules-button {
+    display: block; /* Show by default if needed */
+}
+
+/* Styles specifically for Next button */
+#next-button {
+    display: none; /* Hidden by default; shown only when needed */
+}
+
+/* Make sure the Next button is on the rightmost side */
+#bottom-buttons #next-button {
+    display: block; /* Show the Next button when required */
+}
+
+.text {
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 19.92px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#next-page {
+  background-color: green;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+.hurray {
+  font-family: Roboto;
+  font-size: 91px;
+  font-weight: 600;
+  line-height: 106.64px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.won-text {
+  font-family: Roboto;
+  font-size: 41px;
+  font-weight: 600;
+  line-height: 48.05px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.next-play {
+  width: 174px;
+  height: 44px;
+  border-radius: 9px;
+  opacity: 0px;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 17.58px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #6B6B6B;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+}
+
+.image-1 {
+  width: 404px;
+  height: 197px;
+  top: 86px;
+  left: 388px;
+  gap: 0px;
+  opacity: 0px;
+  color: #D9D9D9D4;
+  margin-top: 50px;
+  animation: blink-animation 1s infinite; 
+}
+
+
+/* Keyframes for blinking effect */
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.image-2 {
+  width: 100.43px;
+  height: 101px;
+  top: 159px;
+  left: 557px;
+  gap: 0px;
+  opacity: 0px;
+  color: #FFD233;
+}
+
+.gradient-class {
+  width: 350px;
+  height: 350px;
+  gap: 0px;
+  opacity: 0px;
+  background-image: radial-gradient(circle at center,#ffffff, #2E9A25, #2E9A25, #008000,  #008000,  #2E9A25, #2E9A25, #66ff66, #2E9A25);
+  box-shadow: 0px 1px 62px 0px #00000021;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.gradient-container1,  .gradient-container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 350px;
+}
